@@ -2,3 +2,43 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 0 5px gray;
+}
+
+.nav-items{
+    list-style: none;
+    display: flex;
+}
+
+.nav-items > li{
+    padding: 10px;
+}
+
+.logo{
+    width: 100px;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fun {
+    width: 300px;
+}
+
+.footer{
+    background-color: gray;
+    margin-top: 125px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
