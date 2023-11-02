@@ -5,6 +5,8 @@
 body {
     margin: 0;
     font-family: Inter, sans-serif;
+    height: 100vh;
+    background-color: #282D35;
 }
 
 nav {
@@ -36,21 +38,42 @@ nav {
     margin-right: 7px;
 }
 
-.main-content{
+main{
+    padding: 57px 27px;
+    color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
-.fun {
-    width: 300px;
+.main-title {
+    margin: 0;
+    font-size: 39px;
+    letter-spacing: -0.05em;
 }
+
+.main-facts{
+    margin-top: 46px;
+}
+
+.main-facts > li{
+    line-height: 19px;
+    padding-block: 10px;
+    max-width: 400px;
+}
+
+.main-facts > li::marker {
+    font-size: 1.4rem;
+    color: #61DAFB;
+}
+
 
 .footer{
-    background-color: gray;
-    margin-top: 125px;
-    padding: 5px;
+    background-color: #21222A;
+    color: #61DAFB;
+    margin-top: 177px;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
