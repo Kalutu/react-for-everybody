@@ -11,7 +11,7 @@ export default function MainContent(){
                 <li>Is maintained by Facebook</li>
                 <li>Powers thousands of enterprose apps, including mobile apps</li>
             </ul>
-            <img className="fun" src="./fun.jpg"/>
+            <img className="fun" src="fun.jpg"/>
         </div>
     );
 }
