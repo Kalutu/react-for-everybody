@@ -23,6 +23,17 @@ export default function Meme(){
         })
     }
 
+    function handleChange(e){
+        const {name, value} = e.target
+        setMeme(prevMeme=>{
+            return {
+                ...prevMeme,
+                [name] : value
+            }
+        })
+
+    }
+
     return(
         <main>
             <div className="form">
@@ -30,12 +41,18 @@ export default function Meme(){
                     type="text" 
                     placeholder="Top text"
                     className="form--input"
+                    onChange={handleChange}
+                    value={meme.topText}
+                    name="topText"
                 />
 
                 <input 
                     type="text" 
                     placeholder="Bottom text"
                     className="form--input"
+                    onChange={handleChange}
+                    value={meme.bottomText}
+                    name="bottomText"
                 />
 
                 <button 
@@ -47,8 +64,8 @@ export default function Meme(){
             </div>
             <div className="meme">
                 <img src={meme.imageURL} className="meme--image"/>
-                <h2 className="meme--text top">One does not simply</h2>
-                <h2 className="meme--text bottom">Walk into Mordor</h2>
+                <h2 className="meme--text top">{meme.topText}</h2>
+                <h2 className="meme--text bottom">{meme.bottomText}</h2>
             </div>
            
         </main> 
