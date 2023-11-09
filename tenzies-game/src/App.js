@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import Die from "./Components/Die"
 import {nanoid} from "nanoid"
+import Confetti from 'react-confetti'
 import "./style.css"
 
 
@@ -57,15 +58,15 @@ export default function App() {
     const diceElements = dice.map(die=> <Die isHeld={die.isHeld} key={die.id} value={die.value} id={die.id} holdDice={()=>holdDice(die.id)}/>)
 
 
-
   return (
       <main>
+         {tenzies && <Confetti />}
          <h1 className="title">Tenzies</h1>
             <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
           <div className="dice-container">
               {diceElements}
           </div>
-          <button className="roll-dice" onClick={rollDice}>Roll</button>
+          <button className="roll-dice" onClick={rollDice}>{tenzies ? "New Game" : "Roll"}</button>
       </main>
   )
 }
