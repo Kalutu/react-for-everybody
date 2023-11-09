@@ -21,8 +21,6 @@ export default function App() {
 
     },[dice])
 
-    
-   
     function generateNewDie(){
         return {
             value:  Math.ceil(Math.random()*6),
@@ -38,7 +36,6 @@ export default function App() {
         }
         return newDice
     }
-
 
     function rollDice(){
         if(!tenzies){
@@ -62,16 +59,15 @@ export default function App() {
     
     const diceElements = dice.map(die=> <Die isHeld={die.isHeld} key={die.id} value={die.value} id={die.id} holdDice={()=>holdDice(die.id)}/>)
 
-
-  return (
-      <main>
-         {tenzies && <Confetti />}
-         <h1 className="title">Tenzies</h1>
-            <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
-          <div className="dice-container">
-              {diceElements}
-          </div>
-          <button className="roll-dice" onClick={rollDice}>{tenzies ? "New Game" : "Roll"}</button>
-      </main>
-  )
+    return (
+        <main>
+            {tenzies && <Confetti />}
+            <h1 className="title">Tenzies</h1>
+                <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+            <div className="dice-container">
+                {diceElements}
+            </div>
+            <button className="roll-dice" onClick={rollDice}>{tenzies ? "New Game" : "Roll"}</button>
+        </main>
+    )
 }
